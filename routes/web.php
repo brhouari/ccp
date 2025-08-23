@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\CdController;
+use App\Http\Controllers\DashboardController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -16,6 +17,9 @@ Route::view('dashboard', 'dashboard')
     ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
+
+    Route::resource('admin/dashboard', DashboardController::class);
+
     Route::redirect('settings', 'settings/profile');
 
     Route::get('settings/profile', Profile::class)->name('settings.profile');
@@ -30,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
      Route::get('personnes/create', \App\Livewire\Personnes\Create::class)->name('personnes.create');
      Route::get('personnes/edit/{personne}', \App\Livewire\Personnes\Edit::class)->name('personnes.edit');
 
-    //Route::resource('laravel/cds', DashController::class);
+    
 
     //Route::view('about', 'about')->name('about');
 
