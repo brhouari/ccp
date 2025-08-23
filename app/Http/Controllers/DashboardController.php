@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Cd;
 
-class DashController extends Controller
+class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard', [
+        return view('dashboard.index', [
             'cds' => Cd::paginate(10),
         ]);
     }
