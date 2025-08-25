@@ -34,6 +34,8 @@ Route::middleware(['auth'])->group(function () {
      Route::get('personnes/create', \App\Livewire\Personnes\Create::class)->name('personnes.create');
      Route::get('personnes/edit/{personne}', \App\Livewire\Personnes\Edit::class)->name('personnes.edit');
 
+     Route::get('lignecd/{cd}', \App\Livewire\LigneCd\Index::class)->name('ligne-cd.index');
+
     
 
     //Route::view('about', 'about')->name('about');
