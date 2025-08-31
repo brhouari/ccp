@@ -4,8 +4,9 @@ use App\Http\Controllers\DashboardController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
-use App\Livewire\Cds\Create;
-use App\Livewire\Cds\Index;
+use App\Livewire\LigneCds\Create;
+use App\Livewire\LigneCds\Index;
+use App\Livewire\TestSelect;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -34,8 +35,10 @@ Route::middleware(['auth'])->group(function () {
      Route::get('personnes/create', \App\Livewire\Personnes\Create::class)->name('personnes.create');
      Route::get('personnes/edit/{personne}', \App\Livewire\Personnes\Edit::class)->name('personnes.edit');
 
-     Route::get('lignecd/{cd}', \App\Livewire\LigneCd\Index::class)->name('ligne-cd.index');
-
+     Route::get('ligne-cds/{cd}', \App\Livewire\LigneCds\Index::class)->name('ligne-cds.index');
+     Route::get('ligne-cds/create/{cd}', \App\Livewire\LigneCds\Create::class)->name('ligne-cds.create');
+     Route::get('ligne-cds/edit/{lignecd}', \App\Livewire\LigneCds\Edit::class)->name('ligne-cds.edit');
+     //Route::get('/test-select', TestSelect::class);
     
 
     //Route::view('about', 'about')->name('about');

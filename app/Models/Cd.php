@@ -10,14 +10,14 @@ class Cd extends Model
 {
     protected $fillable = [
         'title',
-        'description',
+        'description'
     ];
 
-   /** public function personnes(): HasMany
+    public function cdligne(): HasMany
 
     {
 
-        return $this->hasMany(Personne::class,'cd_id');
+        return $this->hasMany(CdLigne::class);
 
-    }*/
+    }
 }

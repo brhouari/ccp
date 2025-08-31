@@ -31,7 +31,7 @@
                         <flux:button variant="danger" wire:click="delete({{ $cd->id }})" wire:confirm="Are you sure?">Supprimer</flux:button>
                     </td>
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-                       <flux:button :href="route('ligne-cd.index', $cd)">Ajouter</flux:button>
+                       <flux:button :href="route('ligne-cds.index', $cd)">Ajouter</flux:button>
                     </td>
                 </tr>
             @endforeach
